@@ -68,6 +68,9 @@ var kanamavalingu = L.tileLayer('https://mapwarper.net/maps/tile/23002/{z}/{x}/{
     attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/12" target="_blank">Kanama-Valingu teelõik</a>',
     opacity: 0.8
 }).addTo(map);
+var urda = L.tileLayer('https://mapwarper.net/maps/tile/23008/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/16" target="_blank">Topi-Urda teelõik</a>'
+});
 
 L.control.locate({
     strings: {
@@ -116,7 +119,8 @@ var allMapLayers = {
     'stravarunning': stravarunning,
     'stravacycling': stravacycling,
     'topisaue': topisaue,
-    'kanamavalingu': kanamavalingu
+    'kanamavalingu': kanamavalingu,
+    'urda': urda
 };
 
 L.control.layers({
@@ -134,7 +138,8 @@ L.control.layers({
     'Strava jalgsi': stravarunning,
     'Strava rattaga': stravacycling,
     'Topi-Saue teelõik': topisaue,
-    'Kanama-Valingu teelõik': kanamavalingu
+    'Kanama-Valingu teelõik': kanamavalingu,
+    'Topi-Urda teelõik': urda
 }, {
     position: 'topleft'
 }).addTo(map);
@@ -162,11 +167,12 @@ $(function() {
             sauelyp.setOpacity(ui.value / 100);
             nommeyp.setOpacity(ui.value / 100);
             keilayp.setOpacity(ui.value / 100);
+            gtdp.setOpacity(ui.value / 100);
             stravarunning.setOpacity(ui.value / 100);
             stravacycling.setOpacity(ui.value / 100);
             topisaue.setOpacity(ui.value / 100);
             kanamavalingu.setOpacity(ui.value / 100);
-            gtdp.setOpacity(ui.value / 100);
+            urda.setOpacity(ui.value / 100);
         }
     });
 });
