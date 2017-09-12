@@ -1,0 +1,51 @@
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .info {
+        padding: 8px 16px 4px 16px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .info a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .info h1 {
+        margin: 0 0 0px;
+    }
+    .leaflet-control-layers-toggle {
+        width: 26px;
+        height: 26px;
+        background-size: 80%;
+    }
+
+    .leaflet-touch .leaflet-control-layers-toggle {
+        width: 30px;
+        height: 30px;
+        background-size: 80%;
+    }
+
+    #slider {
+        position: absolute;
+        top: 90px;
+        right: 10px;
+        height: 150px;
+        z-index: 1000;
+    }
+
+    #slider .ui-state-default, .ui-slider-range {
+        background-color: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.5);
+    }
