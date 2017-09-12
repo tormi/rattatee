@@ -1,6 +1,6 @@
 var map = new L.Map('map', {
-    center: [59.2993, 24.541],
-    zoom: 11
+    center: [59.3277, 24.5351],
+    zoom: 13
 });
 
 map.attributionControl.setPrefix('');
@@ -42,7 +42,7 @@ var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
 var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
     attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>',
     opacity: 0.8
-}).addTo(map);
+});
 var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/22978/{z}/{x}/{y}.png', {
     attribution: '<a href="http://saue.kovtp.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
 });
