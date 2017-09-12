@@ -49,7 +49,7 @@ var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/22978/{z}/{x}/{y}.png
 var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/color2/{z}/{x}/{y}.png', {
     attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
 });
-var stravacycling = L.tileLayer('https://globalheat.strava.com/tiles/cycling/color8/{z}/{x}/{y}.png', {
+var stravacycling = L.tileLayer('https://globalheat.strava.com/tiles/cycling/color3/{z}/{x}/{y}.png', {
     attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
 });
 
