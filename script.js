@@ -109,6 +109,21 @@ map.addControl(new L.Control.Search({
     zoom: 18
 }));
 
+    function tStyle(tFeature) {
+      return {
+        weight: 8,
+        opacity: 0.8,
+        color: '#669900'
+      }
+    }
+    var rattatee = omnivore.geojson('rattatee.geojson')
+      .on('ready', function() {
+        // map.fitBounds(rattatee.getBounds());
+        map.addLayer(rattatee);
+        // rattatee.eachLayer(eachLayer);
+        rattatee.setStyle(tStyle);
+      });
+
 var allMapLayers = {
     'osm': osm,
     'pohi': pohi,
@@ -125,7 +140,8 @@ var allMapLayers = {
     'topisaue': topisaue,
     'kanamavalingu': kanamavalingu,
     'urda': urda,
-    'laagri': laagri
+    'laagri': laagri,
+    'rattatee': rattatee
 };
 
 L.control.layers({
@@ -145,7 +161,8 @@ L.control.layers({
     'Topi-Saue teelõik': topisaue,
     'Kanama-Valingu teelõik': kanamavalingu,
     'Topi-Urda teelõik': urda,
-    'Vana-Pääsküla - Topi teelõik': laagri
+    'Vana-Pääsküla - Topi teelõik': laagri,
+    'Rattatee': rattatee
 }, {
     position: 'topleft'
 }).addTo(map);
