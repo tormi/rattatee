@@ -144,7 +144,7 @@ var info = L.control();
 info.onAdd = function(map) {
     this._div = L.DomUtil.create('div', 'info');
     this._div.innerHTML = (
-        "<h1><a href=\'\/rattatee-tallinn-saue-keila\' title=\'Rattatee Tallinn - Saue - Keila\'>Rattatee Tallinn - Saue - Keila</a></h1><a href=\'https:\/\/medium.com/\saue/\kiirtee-saue-linnast-keilasse-ja-tallinna-5529e1cd69f2\' title=\'Idee tutvustus\' target=\'_blank\'>Idee tutvustus</a> | <a href=\'https:\/\/medium.com/\@tormi\' title=\'Kaardi teostus: Tormi Tabor\' target=\'_blank\'>Kaardi teostus: Tormi Tabor</a> | <a href=\'https:\/\/github.com\/liikuvus\/rattatee-tallinn-saue-keila\/issues\' title=\'Anna tagasisidet\' target=\'_blank\'>Tagasiside</a>"
+        "<h1><a href=\'\/rattatee-tallinn-saue-keila\' title=\'Rattatee Tallinn - Saue - Keila\'>Rattatee Tallinn - Saue - Keila</a></h1><a href=\'https:\/\/medium.com/\saue/\kiirtee-saue-linnast-keilasse-ja-tallinna-5529e1cd69f2\' title=\'Idee tutvustus\' target=\'_blank\'>Idee tutvustus</a> | <a href=\'https:\/\/medium.com/\@tormi\' title=\'Kaardi teostus: Tormi Tabor\' target=\'_blank\'>Kaardi teostus: Tormi Tabor</a> | <a href=\'https:\/\/github.com\/liikuvus\/rattatee-tallinn-saue-keila\/labels/\ettepanek\' title=\'Ettepanekud projektile\' target=\'_blank\'>Ettepanekud projektile</a>"
     );
     return this._div;
 };
