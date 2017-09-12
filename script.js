@@ -71,6 +71,10 @@ var kanamavalingu = L.tileLayer('https://mapwarper.net/maps/tile/23002/{z}/{x}/{
 var urda = L.tileLayer('https://mapwarper.net/maps/tile/23008/{z}/{x}/{y}.png', {
     attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/16" target="_blank">Topi-Urda teelõik</a>'
 });
+var laagri = L.tileLayer('https://mapwarper.net/maps/tile/23029/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://www.mnt.ee/et/ehitus/tallinn-parnu-ikla-vana-paaskula-topi-loigu-tehniline-projekt" target="_blank">Vana-Pääsküla - Urda teelõik</a>',
+    opacity: 0.8
+}).addTo(map);
 
 L.control.locate({
     strings: {
@@ -120,7 +124,8 @@ var allMapLayers = {
     'stravacycling': stravacycling,
     'topisaue': topisaue,
     'kanamavalingu': kanamavalingu,
-    'urda': urda
+    'urda': urda,
+    'laagri': laagri
 };
 
 L.control.layers({
@@ -139,7 +144,8 @@ L.control.layers({
     'Strava rattaga': stravacycling,
     'Topi-Saue teelõik': topisaue,
     'Kanama-Valingu teelõik': kanamavalingu,
-    'Topi-Urda teelõik': urda
+    'Topi-Urda teelõik': urda,
+    'Vana-Pääsküla - Topi teelõik': laagri
 }, {
     position: 'topleft'
 }).addTo(map);
