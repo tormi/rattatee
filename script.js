@@ -45,6 +45,9 @@ var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png
 var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/22978/{z}/{x}/{y}.png', {
     attribution: '<a href="http://saue.kovtp.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
 });
+var nommeyp = L.tileLayer('https://mapwarper.net/maps/tile/23005/{z}/{x}/{y}.png', {
+    attribution: '<a href="http://www.tallinn.ee/est/ehitus/Nomme-linnaosa-uldplaneering" target="_blank">Nõmme linnaosa üldplaneering 2017</a>'
+});
 var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/color2/{z}/{x}/{y}.png', {
     attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
 });
@@ -104,6 +107,7 @@ var allMapLayers = {
     'kataster': kataster,
     'sauevyp': sauevyp,
     'sauelyp': sauelyp,
+    'nommeyp': nommeyp,
     'gtdp': gtdp,
     'stravarunning': stravarunning,
     'stravacycling': stravacycling,
@@ -120,6 +124,7 @@ L.control.layers({
     'Katastripiirid (z15+)': kataster,
     'Saue valla ÜP': sauevyp,
     'Saue linna ÜP': sauelyp,
+    'Nõmme LO ÜP': nommeyp,
     'Gate Tallinn DP': gtdp,
     'Strava jalgsi': stravarunning,
     'Strava rattaga': stravacycling,
@@ -150,6 +155,7 @@ $(function() {
         slide: function(e, ui) {
             sauevyp.setOpacity(ui.value / 100);
             sauelyp.setOpacity(ui.value / 100);
+            nommeyp.setOpacity(ui.value / 100);
             stravarunning.setOpacity(ui.value / 100);
             stravacycling.setOpacity(ui.value / 100);
             topisaue.setOpacity(ui.value / 100);
