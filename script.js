@@ -52,6 +52,10 @@ var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/col
 var stravacycling = L.tileLayer('https://globalheat.strava.com/tiles/cycling/color3/{z}/{x}/{y}.png', {
     attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
 });
+var topisaue = L.tileLayer('https://mapwarper.net/maps/tile/22989/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/1" target="_blank">Topi-Saue põhiprojekt</a>',
+    opacity: 0.8
+}).addTo(map);
 
 L.control.locate({
     strings: {
@@ -95,7 +99,8 @@ var allMapLayers = {
     'sauevyp': sauevyp,
     'sauelyp': sauelyp,
     'stravarunning': stravarunning,
-    'stravacycling': stravacycling
+    'stravacycling': stravacycling,
+    'topisaue': topisaue
 };
 
 L.control.layers({
@@ -108,7 +113,8 @@ L.control.layers({
     'Saue valla ÜP': sauevyp,
     'Saue linna ÜP': sauelyp,
     'Strava jalgsi': stravarunning,
-    'Strava rattaga': stravacycling
+    'Strava rattaga': stravacycling,
+    'Topi-Saue projekt': topisaue
 }, {
     position: 'topleft'
 }).addTo(map);
@@ -136,6 +142,7 @@ $(function() {
             sauelyp.setOpacity(ui.value / 100);
             stravarunning.setOpacity(ui.value / 100);
             stravacycling.setOpacity(ui.value / 100);
+            topisaue.setOpacity(ui.value / 100);
         }
     });
 });
