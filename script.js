@@ -40,8 +40,7 @@ var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
 });
 
 var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>',
-    opacity: 0.8
+    attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>'
 });
 var sauelyp = L.tileLayer('https://mapwarper.net/maps/tile/22978/{z}/{x}/{y}.png', {
     attribution: '<a href="http://saue.kovtp.ee/uldplaneering" target="_blank">Saue linna üldplaneering 2010</a>'
@@ -52,12 +51,15 @@ var stravarunning = L.tileLayer('https://globalheat.strava.com/tiles/running/col
 var stravacycling = L.tileLayer('https://globalheat.strava.com/tiles/cycling/color3/{z}/{x}/{y}.png', {
     attribution: '<a href="https://www.strava.com/" target="_blank">STRAVA</a>'
 });
+var gtdp = L.tileLayer('https://mapwarper.net/maps/tile/23004/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/11" target="_blank">Gate Tallinn DP liiklusskeem</a>'
+});
 var topisaue = L.tileLayer('https://mapwarper.net/maps/tile/22989/{z}/{x}/{y}.png', {
-    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/1" target="_blank">Topi-Saue lõik</a>',
+    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/1" target="_blank">Topi-Saue teelõik</a>',
     opacity: 0.8
 }).addTo(map);
 var kanamavalingu = L.tileLayer('https://mapwarper.net/maps/tile/23002/{z}/{x}/{y}.png', {
-    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/12" target="_blank">Kanama-Valingu lõik</a>',
+    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/12" target="_blank">Kanama-Valingu teelõik</a>',
     opacity: 0.8
 }).addTo(map);
 
@@ -102,6 +104,7 @@ var allMapLayers = {
     'kataster': kataster,
     'sauevyp': sauevyp,
     'sauelyp': sauelyp,
+    'gtdp': gtdp,
     'stravarunning': stravarunning,
     'stravacycling': stravacycling,
     'topisaue': topisaue,
@@ -117,10 +120,11 @@ L.control.layers({
     'Katastripiirid (z15+)': kataster,
     'Saue valla ÜP': sauevyp,
     'Saue linna ÜP': sauelyp,
+    'Gate Tallinn DP': gtdp,
     'Strava jalgsi': stravarunning,
     'Strava rattaga': stravacycling,
-    'Topi-Saue lõik': topisaue,
-    'Kanama-Valingu lõik': kanamavalingu
+    'Topi-Saue teelõik': topisaue,
+    'Kanama-Valingu teelõik': kanamavalingu
 }, {
     position: 'topleft'
 }).addTo(map);
@@ -150,6 +154,7 @@ $(function() {
             stravacycling.setOpacity(ui.value / 100);
             topisaue.setOpacity(ui.value / 100);
             kanamavalingu.setOpacity(ui.value / 100);
+            gtdp.setOpacity(ui.value / 100);
         }
     });
 });
