@@ -97,7 +97,7 @@
 			// bail if we're moving the map (updating from a hash),
 			// or if the map is not yet loaded
 
-			if (this.movingMap || !this.map._loaded) {
+			if (this.movingMap || !this.map._loaded || !this.parsedOnce) {
 				return false;
 			}
 
@@ -114,23 +114,25 @@
 			if (hash === this.lastHash) {
 				return;
 			}
+                        this.parsedOnce = true;
 			var parsed = this.parseHash(hash);
 			if (parsed) {
 				this.movingMap = true;
 
-				this.map.setView(parsed.center, parsed.zoom);
 				var layers = parsed.layers,
-					options = this.options,
-					that = this;
+				    options = this.options,
+				    that = this;
 				//Add/remove layers
 				this.map.eachLayer(function(layer) {
-					this.map.removeLayer(layer);
+				    that.map.removeLayer(layer);
 				});
 
 				layers.forEach(function(element, index, array) {
-					//console.log(options[element]);
-					that.map.addLayer(options[element]);
+				     //console.log(options[element]);
+				    that.map.addLayer(options[element]);
 				});			
+
+				this.map.setView(parsed.center, parsed.zoom);
 
 				this.movingMap = false;
 			} else {
