@@ -7,12 +7,12 @@ map.attributionControl.setPrefix('');
 
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+});
 var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 	subdomains: 'abcd',
 	maxZoom: 19
-});
+}).addTo(map);
 var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
