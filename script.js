@@ -8,7 +8,7 @@ map.attributionControl.setPrefix('');
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 });
-var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+var positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 	subdomains: 'abcd',
 	maxZoom: 19
@@ -132,7 +132,7 @@ map.addControl(new L.Control.Search({
 
 var allMapLayers = {
     'osm': osm,
-    'CartoDB_Positron': CartoDB_Positron,
+    'positron': positron,
     'pohi': pohi,
     'orto': orto,
     'hybriid': hybriid,
@@ -153,7 +153,7 @@ var allMapLayers = {
 
 L.control.layers({
     'OpenStreetMap': osm,
-    'Positron': CartoDB_Positron,
+    'Positron': positron,
     'Põhikaart (z15+)': pohi,
     'Ortofoto': orto
 }, {
