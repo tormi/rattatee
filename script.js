@@ -8,6 +8,11 @@ map.attributionControl.setPrefix('');
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Aluskaart &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
+});
 var pohi = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     format: 'image/png',
     transparent: true,
@@ -38,6 +43,7 @@ var kataster = L.tileLayer.wms("http://kaart.maaamet.ee/wms/alus-geo?", {
     layers: 'TOPOYKSUS_6569',
     crs: L.CRS.EPSG4326
 });
+
 
 var sauevyp = L.tileLayer('https://mapwarper.net/maps/tile/17658/{z}/{x}/{y}.png', {
     attribution: '<a href="http://sauevald.kovtp.ee/et/uldplaneering" target="_blank">Saue valla üldplaneering 2016</a>'
@@ -126,6 +132,7 @@ map.addControl(new L.Control.Search({
 
 var allMapLayers = {
     'osm': osm,
+    'CartoDB_Positron': CartoDB_Positron,
     'pohi': pohi,
     'orto': orto,
     'hybriid': hybriid,
@@ -146,6 +153,7 @@ var allMapLayers = {
 
 L.control.layers({
     'OpenStreetMap': osm,
+    'Positron': CartoDB_Positron,
     'Põhikaart (z15+)': pohi,
     'Ortofoto': orto
 }, {
